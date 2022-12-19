@@ -1,0 +1,17 @@
+from PIL import Image
+import numpy as np
+import os
+
+path = '/home/dl/PycharmProjects/Standardized-max-logits/datasets/RoadAnomaly/gtCoarse/val/one_city'
+cities = os.listdir(path)
+
+for i in cities:
+    # print(i.replace('.labels',''))
+    mask = Image.open(path+'/'+i + '/labels_semantic.png')
+    mask.save(path+'/'+i.replace('.labels','')+'.png')
+
+# path = '/home/dl/PycharmProjects/Standardized-max-logits/datasets/RoadAnomaly/RoadAnomaly_jpg/frames/animals01_Guiguinto_railway_station_Calves.labels/'
+# mask = Image.open(path+'labels_semantic.png')
+# mask = np.array(mask)
+# print(np.unique(mask))
+
